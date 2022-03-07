@@ -34,11 +34,24 @@ El proyecto cumple con el objetivo inicial de presentar los cuatro verbos inicia
 ---
 # Pruebas  
 
-- AddUser POST -> `http://localhost:8080/api/users`
-- GetAllUser GET -> `http://localhost:8080/api/users`
-- FindUserById GET -> `http://localhost:8080/api/users/{IdUser}`
-- UpdateUser PUT -> `http://localhost:8080/api/users/{IdUser}`
-- DeleteUser DELETE -> `http://localhost:8080/api/users/{IdUser}`
+- POST -> `http://localhost:8080/api/users`
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-simple-mongo/src/main/images/Post.jpg)
+
+
+- GET -> `http://localhost:8080/api/users`
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-simple-mongo/src/main/images/GetAll.jpg)
+
+
+- GET -> `http://localhost:8080/api/users/{IdUser}`
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-simple-mongo/src/main/images/GetById.jpg)
+
+
+- PUT -> `http://localhost:8080/api/users/{IdUser}`
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-simple-mongo/src/main/images/Update.jpg)
+
+
+- DELETE -> `http://localhost:8080/api/users/{IdUser}`
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-simple-mongo/src/main/images/Update.jpg)
 
 
 
