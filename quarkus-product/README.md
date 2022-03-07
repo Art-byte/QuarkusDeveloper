@@ -32,7 +32,11 @@ Proyecto de prueba para hacer un crud con una base de datos en memoria. La idea 
 
 ---
 # Preview 
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-product/src/main/images/RestApi.jpg)
 
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-product/src/main/images/swagger.jpg)
 
 
 
