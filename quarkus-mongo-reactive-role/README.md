@@ -1,64 +1,95 @@
-# quarkus-mongo-reactive-role Project
+# code-with-quarkus Project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Proyecto de prueba para presentar el desarrollo de un servicio rest que permita manejar el control de acceso a ciertas rutas basandose en roles.  Se hace uso de Mongodb y nos estamos conectando de manera local a una colección de datos llamada companys. 
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+El proyecto cumple con el objetivo inicial de presentar los cuatro verbos iniciales: GET, POST, PUT y DELETE así como también cuenta con una llave publica o privada para el manejo de la autenticación mediante jwt.
+<br>
 
-## Running the application in dev mode
+---
+# Requisito de sistema
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
+- Maven 3.8.4
+- Java Open jdk 11
+- GraalVM
+- Openssl (Para generar llave pública o privada)
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+#### Nota: `Puedes usar el perfil de autenticación para generar uno automático`
 
-## Packaging and running the application
+<br>
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+---
+# Extensiones
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+- quarkus-resteasy
+- quarkus-hibernate-validator
+- quarkus-resteasy-jsonb
+- quarkus-resteasy-mutiny
+- quarkus-smallrye-openapi
+- quarkus-smallrye-jwt
+- quarkus-elytron-security-properties-file
+- de.flapdoodle.embed.mongo
+- quarkus-junit5-mockito
+- smallrye-mutiny-vertx-web-client
+- mapstruct
+- mapstruct-processor
+- quarkus-junit5-mockito
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
+<br>
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+---
+# Ejecutar proyecto
 
-## Creating a native executable
+- Windows cmd
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
+    `mvnw compile quarkus:dev`
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
+    ### Para poder ejecutar el proyecto, es necesario que tengas la llave pública que se encuentra en la ruta: `src/main/resources/META-INF/resources/publicKey.pem`
 
-You can then execute your native executable with: `./target/quarkus-mongo-reactive-role-1.0.0-SNAPSHOT-runner`
+    <br>
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
+- Linux bash
 
-## Provided Code
+    `./mvnw compile quarkus:dev`
 
-### RESTEasy JAX-RS
+---
 
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
-
+# Ejecutar proyecto con un perfil de autenticación
 
 
-Generate Key Pair
-openssl genrsa -des3 -out private.pem 2048
+    QUARKUS_PROFILE=auth mvn compile quarkus:dev
 
-Extract Public Key
-openssl rsa -in private.pem -outform PEM -pubout -out public.pem
+<br>
+
+#### Debe contarse con llave pública y privada para poder manda a llamar el api
+
+<br>
+
+---
+# Generar llave pública y privada
+Para generar la llave pública y privada haremos uso de la herramienta openssl la cual pueden descargar desde su [página principal](https://slproweb.com/products/Win32OpenSSL.html). Una vez instalado debemos agregar a nuestro path openssl y posterior a ello debemos situarnos en la ruta de nuestro proyecto donde necesitamos que se guarden las llaves. 
+
+Para generarlas ejecutaremos los siguientes comandos 
+
+- Generar la llave: `openssl genrsa -des3 -out private.pem 2048`
+
+- Extraer la llave publica: `openssl rsa -in private.pem -outform PEM -pubout -out public.pem`
+
+#### Recordar que la clave que estamos agregando es 2048, pero puede variar
+
+<br>
+
+---
+# Swagger UI
+
+Para acceder a la interfaz de usuario de Swagger y generar un JWT válido, use /api/auth cuando el perfil de autenticación esté activado.
+
+
+Pueden usarse los siguientes roles:
+
+- ROLE_ADMIN -> `Access for all endpoints`
+- ROLE_COMPANY_READ -> `Read Access to GET - /api/companies and GET - /api/companies/{id}.`
+- ROLE_COMPANY_CREATE -> `Create Access to POST - /api/companies`
+- ROLE_COMPANY_SAVE -> `Update Access to PUT - /api/companies`
+- ROLE_COMPANY_DELETE -> `Delete Access to DELETE - /api/companies`
+
+### Para generar un JWT, primero debe cerrar sesión en el botón Autorizar.
