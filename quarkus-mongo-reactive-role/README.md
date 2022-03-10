@@ -81,6 +81,8 @@ Para generarlas ejecutaremos los siguientes comandos
 ---
 # Swagger UI
 
+Ruta de acceso: `http://localhost:8080/q/swaggerui/`
+
 Para acceder a la interfaz de usuario de Swagger y generar un JWT válido, use /api/auth cuando el perfil de autenticación esté activado.
 
 
