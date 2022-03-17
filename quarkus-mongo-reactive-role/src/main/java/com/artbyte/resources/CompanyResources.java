@@ -53,9 +53,8 @@ public class CompanyResources {
         log.info("hello {}", name);
         Multi<Company> multi = hasRoleAdmin(ctx) ? Company.findActivateCompanies() : Company
                 .findActiveCompaniesByUser(name);
-        return multi.map(companyMapper::toResource);
+        return multi.map(c -> companyMapper.toResource(c));
     }
-
 
 
     @GET

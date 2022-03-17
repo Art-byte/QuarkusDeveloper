@@ -17,7 +17,7 @@ public class AppLifecycleBean {
 
     private static final Logger log = LoggerFactory.getLogger(AppLifecycleBean.class);
 
-    @ConfigProperty(name = "configuration.initialLiad", defaultValue = "true")
+    @ConfigProperty(name = "configuration.initialLoad", defaultValue = "true")
     boolean loadMokedData;
 
     @Inject

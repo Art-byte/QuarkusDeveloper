@@ -11,6 +11,8 @@ import java.time.Instant;
 @MongoEntity(collection = "company")
 public class Company extends ReactivePanacheMongoEntity implements Serializable {
 
+    public static final long serialVersionUID = 1L;
+
     @NotBlank
     public String name;
     @NotBlank
