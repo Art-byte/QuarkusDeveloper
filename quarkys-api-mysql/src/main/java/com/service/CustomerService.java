@@ -18,37 +18,37 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
     private final CustomerMapper customerMapper;
 
-    public CustomerService( CustomerRepository customerRepository, CustomerMapper customerMapper){
+    public CustomerService(CustomerRepository customerRepository, CustomerMapper customerMapper) {
         this.customerRepository = customerRepository;
         this.customerMapper = customerMapper;
     }
 
-
-    public List<CustomerDTO> findAll(){
+    public List<CustomerDTO> findAll() {
         return customerRepository.findAll().stream()
                 .map(customerMapper::toDomain)
                 .collect(Collectors.toList());
     }
 
-    public Optional<CustomerDTO> findById(Integer id){
+    public Optional<CustomerDTO> findById(Integer id) {
         return customerRepository.findByIdOptional(id).map(customerMapper::toDomain);
     }
 
     @Transactional
-    public CustomerDTO save(CustomerDTO customerDTO){
+    public CustomerDTO save(CustomerDTO customerDTO) {
         Customer customer = customerMapper.toEntity(customerDTO);
         customerRepository.persist(customer);
         return customerMapper.toDomain(customer);
     }
 
     @Transactional
-    public CustomerDTO update(CustomerDTO customerDTO){
-        if(customerDTO.getCustomerId() == null){
-            throw  new ServiceException("Customer does not have a customerId");
+    public CustomerDTO update(CustomerDTO customerDTO) {
+        if (customerDTO.getCustomerId() == null) {
+            throw new ServiceException("Customer does not have a customerId");
         }
         Optional<Customer> optional = customerRepository.findByIdOptional(customerDTO.getCustomerId());
-        if(optional.isEmpty()){
-            throw new ServiceException(String.format("No customer found for customerId[%s]", customerDTO.getCustomerId()));
+        if (optional.isEmpty()) {
+            throw new ServiceException(
+                    String.format("No customer found for customerId[%s]", customerDTO.getCustomerId()));
         }
 
         Customer entity = optional.get();
@@ -61,24 +61,10 @@ public class CustomerService {
         return customerMapper.toDomain(entity);
     }
 
-
-
-
+    @Transactional
+    public String delete(Integer id) {
+        customerRepository.deleteById(id);
+        return "User deleted";
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

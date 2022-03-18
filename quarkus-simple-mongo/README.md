@@ -1,13 +1,13 @@
-# code-with-quarkus Project
+# quarkus-simple-mongo Project
 
-Proyecto de prueba para presentar el desarrollo de un crud básico haciendo uso de una base de datos NoSQL, en este caso es Mongodb y no estamos conectando de manera local a una colección de datos llamada usuarios. 
+Proyecto de prueba para presentar el desarrollo de un crud básico haciendo uso de una base de datos NoSQL, en este caso es Mongodb y nos estamos conectando de manera local a una colección de datos llamada usuarios. 
 
 El proyecto cumple con el objetivo inicial de presentar los cuatro verbos iniciales: GET, POST, PUT y DELETE.
 <br>
 
 ---
 # Requisito de sistema
-
+- Maven 3.8.4
 - Java Open jdk 11
 - GraalVM
 

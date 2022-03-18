@@ -1,11 +1,11 @@
-# code-with-quarkus Project
+# quarkus-product Project
 
 Proyecto de prueba para hacer un crud con una base de datos en memoria. La idea es hacer el ejercicio de crear un CRUD para poder ver la funcionalidad de quarkus. Se hace uso también de la extensión de swagger para poder mejorar la experiencia y visualización de los endpoint disponibles.
 <br>
 
 ---
 # Requisito de sistema
-
+- Maven 3.8.4
 - Java Open jdk 11
 - GraalVM
 

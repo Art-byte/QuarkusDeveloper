@@ -1,4 +1,4 @@
-# code-with-quarkus Project
+# quarkus-mongo-reactive-role Project
 
 Proyecto de prueba para presentar el desarrollo de un servicio rest que permita manejar el control de acceso a ciertas rutas basandose en roles.  Se hace uso de Mongodb y nos estamos conectando de manera local a una colección de datos llamada companys. 
 

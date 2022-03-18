@@ -1,60 +1,49 @@
 # quarkys-api-mysql Project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Proyecto de prueba para presentar el desarrollo de un crud básico haciendo uso de una base de datos relacional (Mysql), nos estamos conectando de manera local a una tabla de datos llamada customer. 
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+El proyecto cumple con el objetivo inicial de presentar los cuatro verbos iniciales: GET, POST, PUT y DELETE.
 
-## Running the application in dev mode
+Como forma de poder hacer un testeo simple sobre nuestro crud, se está haciendo uso de swagger.
+<br>
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
+---
+# Requisito de sistema
+- Maven 3.8.4
+- Java Open jdk 11
+- GraalVM
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+---
+# Extensiones
 
-## Packaging and running the application
+- quarkus-resteasy
+- quarkus-hibernate-validator
+- quarkus-resteasy-jsonb
+- quarkus-smallrye-openapi
+- quarkus-hibernate-orm-panache
+- quarkus-jdbc-mysql
+- org.mapstruct
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+---
+# Ejecutar proyecto
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+- Windows cmd
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
+    `mvnw compile quarkus:dev`
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+- Linux bash
 
-## Creating a native executable
+    `./mvnw compile quarkus:dev`
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
+---
+# Ejecutando Swagger UI
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
+Para acceder a la interfaz de swagger, basta solo con dirigirnos a la siguiente ruta: http://localhost:8080/q/swaggerui/
 
-You can then execute your native executable with: `./target/quarkys-api-mysql-1.0.0-SNAPSHOT-runner`
+<br>
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Related Guides
-
-- RESTEasy JAX-RS ([guide](https://quarkus.io/guides/rest-json)): REST endpoint framework implementing JAX-RS and more
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+- GET -> `http://localhost:8080/api/customer`
+- GET_ID -> `http://localhost:8080/api/customer/{id}`
+- POST -> `http://localhost:8080/api/customer`
+- PUT -> `http://localhost:8080/api/customer/{id}`
+- DELETE -> `http://localhost:8080/api/customer/{id}`

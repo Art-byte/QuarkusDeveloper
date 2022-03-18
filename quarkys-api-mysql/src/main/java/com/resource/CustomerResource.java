@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -117,5 +118,24 @@ public class CustomerResource {
         final CustomerDTO saved = customerService.update(customerDTO);
         return Response.ok(saved).build();
     }
-    
+
+
+    @DELETE
+    @Path("/{customerId}")
+    @APIResponses(
+        value = {
+            @APIResponse(
+                responseCode = "202",
+                description = "Delete customer by customerId",
+                content = @Content(mediaType = "application/json",
+                schema = @Schema(type = SchemaType.OBJECT, implementation = CustomerDTO.class))),
+            @APIResponse(
+                responseCode = "204",
+                description = "No content",
+                content = @Content(mediaType = "application/json"))
+        }
+    )
+    public Response delete(@PathParam("customerId") Integer customerId){
+        return Response.ok(customerService.delete(customerId)).build();
+    }
 }
