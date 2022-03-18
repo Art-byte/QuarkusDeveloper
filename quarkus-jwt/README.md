@@ -34,10 +34,37 @@ Para probar la funcionalidad de nuestro proyecto deberemos ingresar primero a la
 
 <br>
 
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-jwt/src/main/img/login.png)
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-jwt/src/main/img/adminLogin.png)
+
 Dependiendo del usuario con el que este logeado, nuestro token nos dejará tener acceso sólo a las rutas correspondientes a nuestro rol.
+
+<br>
 
 - `http://locallhost:8080/resource/user`
 
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-jwt/src/main/img/user.png)
+
+<br>
+
 - `http://locallhost:8080/resource/admin`
 
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-jwt/src/main/img/admin.png)
+
+<br>
+
 - `http://locallhost:8080/resource/user-or-admin`
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkus-jwt/src/main/img/userOrAdmin.png)
+
+<br>
+
