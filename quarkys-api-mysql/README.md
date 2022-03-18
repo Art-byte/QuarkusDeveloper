@@ -43,7 +43,53 @@ Para acceder a la interfaz de swagger, basta solo con dirigirnos a la siguiente 
 <br>
 
 - GET -> `http://localhost:8080/api/customer`
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/GetRes.png)
+
+<br>
+
 - GET_ID -> `http://localhost:8080/api/customer/{id}`
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/GetByIdPre.png)
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/GetByIdRes.png)
+
+<br>
+
 - POST -> `http://localhost:8080/api/customer`
+- 
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/PostRe.png)
+
+<br>
+
 - PUT -> `http://localhost:8080/api/customer/{id}`
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/PutPre.png)
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/PutRes.png)
+
+<br>
+
 - DELETE -> `http://localhost:8080/api/customer/{id}`
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/DeletePre.png)
+
+<br>
+
+![image text](https://github.com/Art-byte/QuarkusDeveloper/blob/main/quarkys-api-mysql/src/main/img/DeleteRes.png)
+
+<br>
